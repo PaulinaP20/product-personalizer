@@ -4,9 +4,7 @@ import OptionColor from '../OptionColor/OptionColor';
 import OptionSize from '../OptionSize/OptionSize';
 import PropTypes from "prop-types";
 
-
-
-const ProductForm = ({title,currentSize, currentColor,sizes,colors,setCurrentColor,setCurrentSize,getPrice}) => {
+const ProductForm = ({title,currentSize, currentColor,sizes,colors,setCurrentColor,setCurrentSize,price}) => {
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -14,7 +12,7 @@ const ProductForm = ({title,currentSize, currentColor,sizes,colors,setCurrentCol
         console.log("===============")
         console.log("Added to cart");
         console.log(`Product: ${title}`);
-        console.log(`Price: $ ${getPrice()}`);
+        console.log(`Price: $ ${price}`);
         console.log(`Size: ${currentSize}`);
         console.log(`Color: ${currentColor}`);
       }
@@ -35,7 +33,7 @@ ProductForm.propTypes={
     currentColor:PropTypes.string.isRequired,
     sizes:PropTypes.array.isRequired,colors:PropTypes.array.isRequired,setCurrentColor:PropTypes.func.isRequired,
     setCurrentSize:PropTypes.func.isRequired,
-    getPrice:PropTypes.func.isRequired,
+    price:PropTypes.number.isRequired,
 }
 
 export default ProductForm;
